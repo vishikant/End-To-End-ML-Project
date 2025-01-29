@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: END-TO-END-ML-PROJECT
+Version: 0.0.1
+Author: Vishi
+Author-email: vishiiikant@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: seaborn
