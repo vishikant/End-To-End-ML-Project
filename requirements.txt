@@ -8,4 +8,5 @@ faker
 imbalanced-learn
 xgboost
 dill
+catboost
 -e.

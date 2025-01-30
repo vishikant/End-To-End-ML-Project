@@ -1,0 +1,9 @@
+[ 2025-01-30 13:30:27,520 ] 24 root - INFO - Entered the data ingestion method or component
+[ 2025-01-30 13:30:27,542 ] 27 root - INFO - Read the dataset as dataframe
+[ 2025-01-30 13:30:27,591 ] 33 root - INFO - Train test split initiated
+[ 2025-01-30 13:30:27,640 ] 26 root - INFO - Entered the data transformation method or component
+[ 2025-01-30 13:30:27,859 ] 61 root - INFO - Transformed data saved to pickle file
+[ 2025-01-30 13:30:27,859 ] 31 root - INFO - Split training and test input data
+[ 2025-01-30 13:30:51,053 ] 42 root - INFO - Model Report: {'Random Forest': 1.0, 'Decision Tree': 1.0, 'Gradient Boosting': 0.9999999992944215, 'Linear Regression': 0.9999963260698148, 'CatBoost': 0.99999646350601, 'XGBoost': 0.9999999997505982}
+[ 2025-01-30 13:30:51,053 ] 48 root - INFO - Best Model: Random Forest with score: 1.0
+[ 2025-01-30 13:30:51,055 ] 54 root - INFO - Best model saved to artifacts/model.pkl

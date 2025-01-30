@@ -1,0 +1,6 @@
+[ 2025-01-30 13:07:30,473 ] 26 root - INFO - Entered the data ingestion method or component
+[ 2025-01-30 13:07:30,495 ] 29 root - INFO - Read the dataset as dataframe
+[ 2025-01-30 13:07:30,543 ] 35 root - INFO - Train test split initiated
+[ 2025-01-30 13:07:30,592 ] 22 root - INFO - Entered the data transformation method or component
+[ 2025-01-30 13:07:30,595 ] 32 root - INFO - Transformed data saved to pickle file
+[ 2025-01-30 13:07:30,598 ] 31 root - INFO - Split training and test input data

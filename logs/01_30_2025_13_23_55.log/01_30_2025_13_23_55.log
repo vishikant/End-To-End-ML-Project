@@ -1,0 +1,7 @@
+[ 2025-01-30 13:23:56,048 ] 24 root - INFO - Entered the data ingestion method or component
+[ 2025-01-30 13:23:56,072 ] 27 root - INFO - Read the dataset as dataframe
+[ 2025-01-30 13:23:56,120 ] 33 root - INFO - Train test split initiated
+[ 2025-01-30 13:23:56,173 ] 22 root - INFO - Entered the data transformation method or component
+[ 2025-01-30 13:23:56,177 ] 32 root - INFO - Transformed data saved to pickle file
+[ 2025-01-30 13:23:56,178 ] 31 root - INFO - Split training and test input data
+[ 2025-01-30 13:23:56,178 ] 63 root - ERROR - An error occurred: could not convert string to float: '5fa6d455-1609-4ae2-a9cf-1937207baac9'

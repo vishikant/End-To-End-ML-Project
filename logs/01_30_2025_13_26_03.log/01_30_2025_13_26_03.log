@@ -1,0 +1,7 @@
+[ 2025-01-30 13:26:04,401 ] 24 root - INFO - Entered the data ingestion method or component
+[ 2025-01-30 13:26:04,423 ] 27 root - INFO - Read the dataset as dataframe
+[ 2025-01-30 13:26:04,470 ] 33 root - INFO - Train test split initiated
+[ 2025-01-30 13:26:04,520 ] 26 root - INFO - Entered the data transformation method or component
+[ 2025-01-30 13:26:04,734 ] 57 root - INFO - Transformed data saved to pickle file
+[ 2025-01-30 13:26:04,734 ] 31 root - INFO - Split training and test input data
+[ 2025-01-30 13:26:04,738 ] 63 root - ERROR - An error occurred: sparse multilabel-indicator for y is not supported.

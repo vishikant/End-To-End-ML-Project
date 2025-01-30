@@ -3,11 +3,14 @@ import sys
 import pandas as pd
 import pickle
 import logging
-from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
 
 # Add the root directory of your project to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/Users/vaishalikant/End-To-End-ML-Project')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Users/vaishalikant/End-To-End-ML-Project-2')))
 
 from src.exception import CustomException
 
@@ -19,20 +22,45 @@ class DataTransformation:
     def __init__(self):
         self.transformation_config = DataTransformationConfig()
 
-    def initiate_data_transformation(self):
+    def initiate_data_transformation(self, train_data, test_data):
         logging.info("Entered the data transformation method or component")
         try:
-            df = pd.read_csv('Notebook/Ride_data.csv')
-            logging.info('Read the dataset as dataframe')
+            # Identify categorical and numerical columns
+            categorical_cols = train_data.select_dtypes(include=['object']).columns
+            numerical_cols = train_data.select_dtypes(exclude=['object']).columns
 
-            # Perform your data transformation here
-            # For example, let's assume you are transforming the data and storing it in transformed_df
-            transformed_df = df  # Replace this with actual transformation logic
+            # Define the preprocessing steps for categorical and numerical columns
+            categorical_transformer = Pipeline(steps=[
+                ('imputer', SimpleImputer(strategy='most_frequent')),
+                ('onehot', OneHotEncoder(handle_unknown='ignore'))
+            ])
+
+            numerical_transformer = Pipeline(steps=[
+                ('imputer', SimpleImputer(strategy='mean'))
+            ])
+
+            # Combine the preprocessing steps
+            preprocessor = ColumnTransformer(
+                transformers=[
+                    ('num', numerical_transformer, numerical_cols),
+                    ('cat', categorical_transformer, categorical_cols)
+                ]
+            )
+
+            # Fit and transform the train and test data
+            X_train = preprocessor.fit_transform(train_data)
+            X_test = preprocessor.transform(test_data)
+
+            # Extract the target variable
+            y_train = train_data.iloc[:, -1].values
+            y_test = test_data.iloc[:, -1].values
 
             # Save the transformed data to a pickle file
             with open(self.transformation_config.transformed_data_path, 'wb') as f:
-                pickle.dump(transformed_df, f)
+                pickle.dump((X_train, y_train, X_test, y_test), f)
             logging.info("Transformed data saved to pickle file")
+
+            return X_train, y_train, X_test, y_test
 
         except FileNotFoundError as e:
             logging.error(f"File not found: {e}")
@@ -40,7 +68,3 @@ class DataTransformation:
         except Exception as e:
             logging.error(f"An error occurred: {e}")
             raise CustomException(e, sys)
-
-if __name__ == "__main__":
-    data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation()

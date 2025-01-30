@@ -6,7 +6,7 @@ import logging
 from dataclasses import dataclass
 
 # Add the root directory of your project to the Python path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/Users/vaishalikant/End-To-End-ML-Project')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/Users/vaishalikant/End-To-End-ML-Project-2')))
 
 from src.exception import CustomException
 
@@ -35,13 +35,11 @@ class DataIngestion:
 
             train_set.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
             test_set.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
+
+            return train_set, test_set
         except FileNotFoundError as e:
             logging.error(f"File not found: {e}")
             raise CustomException(e, sys)
         except Exception as e:
             logging.error(f"An error occurred: {e}")
             raise CustomException(e, sys)
-
-if __name__ == "__main__":
-    data_ingestion = DataIngestion()
-    data_ingestion.initiate_data_ingestion()

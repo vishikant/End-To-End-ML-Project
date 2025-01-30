@@ -1,0 +1,7 @@
+[ 2025-01-30 13:05:29,188 ] 26 root - INFO - Entered the data ingestion method or component
+[ 2025-01-30 13:05:29,210 ] 29 root - INFO - Read the dataset as dataframe
+[ 2025-01-30 13:05:29,258 ] 35 root - INFO - Train test split initiated
+[ 2025-01-30 13:05:29,306 ] 22 root - INFO - Entered the data transformation method or component
+[ 2025-01-30 13:05:29,310 ] 32 root - INFO - Transformed data saved to pickle file
+[ 2025-01-30 13:05:29,310 ] 31 root - INFO - Split training and test input data
+[ 2025-01-30 13:05:29,310 ] 49 root - ERROR - An error occurred: (slice(None, None, None), slice(None, -1, None))
