@@ -6,3 +6,9 @@ Author-email: vishiiikant@gmail.com
 Requires-Dist: pandas
 Requires-Dist: numpy
 Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: jupyter
+Requires-Dist: faker
+Requires-Dist: imbalanced-learn
+Requires-Dist: xgboost

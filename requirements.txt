@@ -7,4 +7,5 @@ jupyter
 faker
 imbalanced-learn
 xgboost
+dill
 -e.
